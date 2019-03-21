@@ -1,0 +1,211 @@
+% resume.tex
+% vim:set ft=tex spell:
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
+% Remove numbers from publications
+\makeatletter
+\def\@bibitem#1{\item[]%
+    \if@filesw\immediate\write\@auxout{\string \bibcite {#1}{\the\value{\@listctr }}}\fi\ignorespaces}
+\makeatletter
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Samuel Morice}}
+
+\ 1545 Jade St. Apt. \#201\ \ \textbullet
+\ \ Davis, CA 95616
+\\
+\ (760) 209-4297\ \ \textbullet
+\ \ sdmorice@ucdavis.edu
+\end{center}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Education}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{University of California, Davis}}
+		{\textbf{Davis, CA}}
+	\\
+	\headerrow
+		{\emph{M.S. Mechanical and Aerospace Engineering}}
+		{\emph{2016 -- Current}}
+	\begin{itemize*}
+		\item Viscous Flow Control for Stall Management
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{University of California, Davis}}
+		{\textbf{Davis, CA}}
+	\\
+	\headerrow
+		{\emph{B.S. Mechanical and Aerospace Engineering}}
+		{\emph{2012-2016}}
+	\begin{itemize*}
+		\item Engineering Dean’s List: Fall 2012, Winter 2013, Fall 2015
+	\end{itemize*}
+	
+\end{itemize}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Experience}
+
+\begin{itemize}
+	\parskip=0.1em	
+    \item
+	\headerrow
+		{\textbf{UC Davis Center for Human/Robotics/Vehicle Integration and Performance}}
+		{\textbf{Davis, CA}}
+	\\
+	\headerrow
+		{\emph{Graduate Student Researcher}}
+		{\emph{2016 -- Current}} % 11/13 - Current
+	\begin{itemize*}
+		\item Researching boundary layer separation control using autonomous vortex generators
+		\item Leading a team of undergraduate engineering students to perform wind tunnel tests in the UC Davis subsonic Aeronautical Wind Tunnel
+		\item Writing and preparing wind tunnel test plans and procedures
+		\item Manufacturing and instrumenting a wing model to use in the wind tunnel
+		\item Designing and building a mechatronic system to activate vortex generators on the test section
+		\item Working with micro controllers to collect and process data from microphones
+		\item Writing Python scripts to analyze experimental data
+		\item Upgrading the current wind tunnel to meet the needs of my experiments
+		\item Writing a thesis that details the experiments done and the results obtained from the experiments
+	\end{itemize*}
+
+	% \item
+	% \headerrow
+	% 	{\textbf{UC Davis}}
+	% 	{\textbf{Davis, CA}}
+	% \\
+	% \headerrow
+	% 	{\emph{Teaching Assistant}}
+	% 	{\emph{2016 -- Current}} % 11/13 - Current
+	% \begin{itemize*}
+	% 	\item Assisted the instructor of record by giving lectures, leading laboratory sessions, holding office hours, and grading assignments
+	% 	\item Classes: Aircraft Design, Space Mission Design, Aircraft Propulsion, Experimental Methods
+	% \end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{IMPROVE Air Quality Network at UC Davis}}
+		{\textbf{Davis, CA}}
+	\\
+	\headerrow
+		{\emph{Student Field Technician}}
+		{\emph{2015-2016}} % 10/15 - Current
+	\begin{itemize*}
+		\item Repaired vacuum pumps, electronic circuits, and specialized air sampling equipment in a workshop setting
+		\item Tested repaired equipment to ensure quality before sending the equipment to the remote sampling sites
+		\item Traveled around the country to remote air quality sampling sites
+		\item Performed routine maintenance on the air sampling equipment while at the sampling site
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Hunter Industries}}
+		{\textbf{San Marcos, CA}}
+	\\
+	\headerrow
+		{\emph{Engineering Intern}}
+		{\emph{Summer 2014}} % 4/2013 - 1/2015
+	\begin{itemize*}
+		\item Assisted the senior engineers by working on pending projects
+		\item Implemented design changes that improved the irrigation controller product
+		\item Designed and performed tests and trade studies that led to a product redesign which went into production
+		\item Gained 3D CAD and plastic injection molded part design skills using PTC Creo Parametric
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{Hunter Industries}}
+		{\textbf{San Marcos, CA}}
+	\\
+	\headerrow
+		{\emph{Machine Shop Intern}}
+		{\emph{Summer 2013}} % 11/2011 - 12/2012
+	\begin{itemize*}
+		\item Assisted the machinists by completing tasks around the machine shop
+		\item Operated manual Bridgeport mills, manual lathes, and Hass CNC lathes.
+		\item Learned 3D modeling using PTC Creo Parametric and SolidWorks
+	\end{itemize*}
+
+\end{itemize}
+
+% \clearpage
+% \hrule
+% \vspace{-0.4em}
+% \subsection*{Selected Publications}
+
+% \nocite{*}
+% \renewcommand{\section}[2]{}%
+% \bibliography{publications}
+% \bibliographystyle{aiaa}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Core Technical Skills}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{description*}
+	\item[Programming Languages:]
+	Python, MATLAB, \LaTeX, C, HTML5, CSS3
+	\item[Fabrication:]
+	Manuel and CNC mill and lathe, soldering, 3D printing
+\end{description*}
+\end{indentsection}
+
+\end{document}
